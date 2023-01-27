@@ -1,6 +1,16 @@
 // import { Movies } from './fetch';
 // import { APIKey } from './apikey';
-// import { markupMyLibrary } from './markup';
+
+
+
+
+
+function markupMyLibrary(dataArr) {
+  const markup = dataArr.map(markupCardLibrary).join('');
+
+  refs.libraryList.insertAdjacentHTML('beforeend', markup);
+}
+
 
 const refs = {
   header: document.querySelector('.header'),

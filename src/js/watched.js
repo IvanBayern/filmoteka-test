@@ -1,6 +1,13 @@
 import { Movies } from './fetch';
 import { APIKey } from './apikey';
-import { markupMyLibrary } from './markup';
+import refs from './refs';
+
+
+function markupMyLibrary(dataArr) {
+  const markup = dataArr.map(markupCardLibrary).join('');
+
+  refs.libraryList.insertAdjacentHTML('beforeend', markup);
+}
 
 const refs = {
   header: document.querySelector('.header'),
@@ -16,7 +23,7 @@ const refs = {
   subtitle: document.querySelector('.filmoteka__subtitle'),
 };
 
-// Слухачі подій
+
 
 try {
   refs.modalCard.addEventListener('click', addWatched);
@@ -44,19 +51,9 @@ function checkWatched() {
   if (localStorage.getItem('watched')) {
     watchedFilm = JSON.parse(localStorage.getItem('watched'));
     watchedFilmId = JSON.parse(localStorage.getItem('watchedId'));
-    // if (!watchedFilm.length) {
-    //   console.log('watchedFilm ', watchedFilm.length);
-    //   refs.subtitle.classList.remove('visually-hidden');
-    //   console.log('refs.subtitle ', refs.subtitle);
-    //   // return;
-    // }
-    // refs.subtitle.classList.add('visually-hidden');
-    // return;
+    
   }
-  // if (!localStorage.getItem('watched')) {
-  //   refs.subtitle.classList.remove('visually-hidden');
-  //   console.log('refs.subtitle 1', refs.subtitle);
-  // }
+  
 }
 
 // Запис в LocalStorage
