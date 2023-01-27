@@ -1,6 +1,6 @@
-import { Movies } from './fetch';
-import { APIKey } from './apikey';
-import { markupMyLibrary } from './markup';
+// import { Movies } from './fetch';
+// import { APIKey } from './apikey';
+// import { markupMyLibrary } from './markup';
 
 const refs = {
   header: document.querySelector('.header'),
