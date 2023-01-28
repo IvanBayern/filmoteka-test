@@ -3,6 +3,7 @@ import { APIKey } from './apikey';
 import refs from './refs';
 
 
+
 function markupMyLibrary(dataArr) {
   const markup = dataArr.map(markupCardLibrary).join('');
 
@@ -12,15 +13,11 @@ function markupMyLibrary(dataArr) {
 const refs = {
   header: document.querySelector('.header'),
   libraryList: document.querySelector('#library-list'),
-  filmotekaList: document.querySelector('#filmoteka-list'),
-  filmotekaItem: document.querySelector('.filmoteka__item'),
+  // в body library треба вставити <ul class="list grid library__list" id="library-list"></ul>
   watchedBtn: document.querySelector('#watched-btn'),
-  myLibLink: document.querySelector('#mylib-link'),
   queueBtn: document.querySelector('#queue-btn'),
   modalCard: document.querySelector('.modal'),
-  modalContent: document.querySelector('.modal__content'),
-  modalCloseBtn: document.querySelector('.modal__close-btn'),
-  subtitle: document.querySelector('.filmoteka__subtitle'),
+  
 };
 
 
@@ -32,6 +29,8 @@ try {
 let watchedFilm = [];
 let watchedFilmId = [];
 const isMyLibMain = refs.header.classList.contains('header--mylib');
+
+// в header library додати class="header header--mylib"
 if (isMyLibMain) {
   createWatched();
 

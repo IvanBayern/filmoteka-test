@@ -11,6 +11,7 @@ export default async function createBtnQueue(id) {
   checkQueue();
 
   const modalQueueBtn = document.querySelector('#modal__button-queue');
+  // додати до кнопок в модалці id="modal__watched-button та id="modal__button-queue" відровідно 
   if (queueFilmId.includes(id)) {
     modalQueueBtn.textContent = 'remove from queue';
     modalQueueBtn.classList.remove('modal__button');

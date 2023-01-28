@@ -4,8 +4,7 @@ export class Movies {
   constructor(APIKey) {
     this.APIKey = APIKey;
 
-    // Если отправили запрос, но ещё не получили ответ,
-    // не нужно отправлять ещё один запрос:
+    
     this.isLoading = false;
   }
 
